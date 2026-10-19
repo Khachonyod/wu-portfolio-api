@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// 1. ข้อมูลส่วนตัวและประวัติ
+model Profile {
+  id          String   @id @default(uuid())
+  name        String
+  title       String   // เช่น "Full-Stack Developer"
+  bio         String
+  avatarUrl   String?
+  resumeUrl   String?
+  email       String
+  githubUrl   String?
+  linkedinUrl String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// 2. ทักษะความเชี่ยวชาญ (Skills)
+model Skill {
+  id          String   @id @default(uuid())
+  name        String   // เช่น "Next.js", "NestJS", "PostgreSQL"
+  category    String   // เช่น "Frontend", "Backend", "Database", "DevOps"
+  icon        String?  // ชื่อไอคอน
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+}
+
+// 3. ผลงานโปรเจกต์ (Projects)
+model Project {
+  id          String   @id @default(uuid())
+  title       String
+  slug        String   @unique
+  description String
+  coverImage  String?
+  tags        String[] // Array ของ Tech Stack เช่น ["Next.js", "NestJS", "Docker"]
+  repoUrl     String?
+  liveUrl     String?
+  featured    Boolean  @default(false) // โปรเจกต์เด่นที่โชว์หน้าแรก
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// 4. ประสบการณ์ทำงาน / การศึกษา (Experiences)
+model Experience {
+  id          String    @id @default(uuid())
+  company     String
+  position    String
+  startDate   DateTime
+  endDate     DateTime?
+  isCurrent   Boolean   @default(false)
+  description String
+  order       Int       @default(0)
+  createdAt   DateTime  @default(now())
+}
+
+// 5. กล่องรับข้อความติดต่อจากผู้เยี่ยมชม (Contact Messages)
+model ContactMessage {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  subject   String
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}

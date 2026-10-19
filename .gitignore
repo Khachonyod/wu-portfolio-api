@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Build Output
+dist/
+*.tsbuildinfo
+
+# Environment & Secrets (ห้ามเอาขึ้น)
+.env
+.env.*
+!.env.example
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# AI Agent Temp
+.agents/
+.claude/
+.cursor/
+.devin/
+
+# Prisma Generated (ถ้ามีการระบุ custom output)
+generated/
