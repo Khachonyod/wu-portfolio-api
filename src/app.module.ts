@@ -6,9 +6,10 @@ import { ProfileModule } from './profile/profile.module';
 import { SkillsModule } from './skills/skills.module';
 import { ProjectsModule } from './projects/projects.module';
 import { ExperiencesModule } from './experiences/experiences.module';
+import { ContactModule } from './contact/contact.module';
 
 @Module({
-  imports: [PrismaModule, ProfileModule, SkillsModule, ProjectsModule, ExperiencesModule],
+  imports: [PrismaModule, ProfileModule, SkillsModule, ProjectsModule, ExperiencesModule, ContactModule],
   controllers: [AppController],
   providers: [AppService],
 })
