@@ -15,27 +15,29 @@ async function main() {
     // 2. ข้อมูล Profile
     const profile = await prisma.profile.create({
         data: {
-            name: 'John Doe',
-            title: 'Full-Stack Developer & Software Engineer',
-            bio: 'หลงใหลในการสร้างสรรค์ Modern Web Applications ด้วย Next.js, NestJS และ Cloud Technologies ชอบการเขียนโค้ดที่สะอาดและมีประสิทธิภาพ',
-            avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80',
+            name: 'Khachonyod Komin',
+            title: 'Full-Stack Developer',
+            bio: 'Hi, I\'m Khachonyod Komin. I am a fourth-year Computer Engineering and Artificial Intelligence student at the University of the Thai Chamber of Commerce. With graduation approaching, I am eager to apply my academic background in software development, data analytics, and AI modeling to build innovative, real-world solutions. I am deeply passionate about leveraging intelligent technologies to solve complex problems and optimize workflows. Explore my portfolio to see my latest projects, and feel free to reach out if you would like to connect or collaborate!',
+            avatarUrl: 'https://6ad82a8ad9feb8b36628ecea.imgix.net/scooter.jpg?auto=format&fit=fill&w=384',
             resumeUrl: 'https://example.com/resume.pdf',
-            email: 'john.dev@example.com',
-            githubUrl: 'https://github.com',
-            linkedinUrl: 'https://linkedin.com',
+            email: 'khachonyodwu@gmail.com',
+            githubUrl: 'https://github.com/Khachonyod',
+            linkedinUrl: 'https://www.linkedin.com/in/khachonyod-k-4b0a40381',
         },
     });
 
     // 3. ข้อมูล Skills
     const skills = [
-        { name: 'TypeScript', category: 'Languages', order: 1 },
-        { name: 'React / Next.js', category: 'Frontend', order: 2 },
-        { name: 'Tailwind CSS', category: 'Frontend', order: 3 },
-        { name: 'Node.js / NestJS', category: 'Backend', order: 4 },
-        { name: 'PostgreSQL', category: 'Database', order: 5 },
-        { name: 'Prisma ORM', category: 'Database', order: 6 },
-        { name: 'Docker', category: 'DevOps', order: 7 },
-        { name: 'Git & GitHub', category: 'Tools', order: 8 },
+        { name: 'Python', category: 'Languages', order: 1 },
+        { name: 'TypeScript', category: 'Languages', order: 2 },
+        { name: 'C/C++', category: 'Languages', order: 3 },
+        { name: 'React / Next.js', category: 'Frontend', order: 4 },
+        { name: 'Tailwind CSS', category: 'Frontend', order: 5 },
+        { name: 'Node.js / NestJS', category: 'Backend', order: 6 },
+        { name: 'PostgreSQL', category: 'Database', order: 7 },
+        { name: 'Prisma ORM', category: 'Database', order: 8 },
+        { name: 'Docker', category: 'DevOps', order: 9 },
+        { name: 'Git & GitHub', category: 'Tools', order: 10 },
     ];
 
     for (const skill of skills) {
@@ -45,12 +47,12 @@ async function main() {
     // 4. ข้อมูล Projects
     await prisma.project.create({
         data: {
-            title: 'E-Commerce Platform',
-            slug: 'e-commerce-platform',
-            description: 'ระบบร้านค้าออนไลน์แบบ Full-Stack รองรับการสั่งซื้อ ชำระเงิน และระบบจัดการสต็อกสินค้า',
-            coverImage: 'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=800&q=80',
-            tags: ['Next.js', 'NestJS', 'PostgreSQL', 'Stripe'],
-            repoUrl: 'https://github.com',
+            title: 'RAG Local Chatbot',
+            slug: 'rag-local-chatbot',
+            description: 'แชทบอทที่ทำงานแบบ Local Host โดยใช้ Ollama และ Llama 3.2 เพื่อให้ได้คำตอบที่แม่นยำและรวดเร็ว',
+            coverImage: 'https://images.contentstack.io/v3/assets/bltefdd0b53724fa2ce/blt5bac038e1ec70425/69bde68199b210b63c7dabc9/illustration-context-rag-app-database.webp',
+            tags: ['Langchain', 'Flask', 'Ollama', 'Llama 3.2', 'ChromaDB'],
+            repoUrl: 'https://github.com/Khachonyod/RAG-Local-ChatBot',
             liveUrl: 'https://example.com',
             featured: true,
             order: 1,
@@ -59,12 +61,12 @@ async function main() {
 
     await prisma.project.create({
         data: {
-            title: 'Task Management App',
-            slug: 'task-management-app',
-            description: 'แอปจัดการงานและโปรเจกต์สไตล์ Kanban Board รองรับการทำงานร่วมกันแบบ Real-time',
-            coverImage: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&w=800&q=80',
-            tags: ['React', 'TypeScript', 'Tailwind', 'Docker'],
-            repoUrl: 'https://github.com',
+            title: 'Thai License-plate Recognition',
+            slug: 'thai-license-plate-recognition',
+            description: 'แอปพลิเคชันจดจำป้ายทะเบียนรถยนต์ของไทย โดยใช้โมเดล AI ในการจดจำป้ายทะเบียนรถยนต์',
+            coverImage: 'https://cdn.ai-forall.com/ifa_dev_media/How_AI_and_ML_are_Revolutionizing_License_Plate_Recognition_3afbc47dee.jpg',
+            tags: ['FastAPI', 'YOLO', 'OpenCV', 'LPR'],
+            repoUrl: 'https://github.com/Khachonyod/Thai-license-plate-Recognition',
             liveUrl: 'https://example.com',
             featured: true,
             order: 2,
@@ -74,9 +76,9 @@ async function main() {
     // 5. ข้อมูล Experience
     await prisma.experience.create({
         data: {
-            company: 'Tech Innovators Co.',
-            position: 'Junior Full-Stack Developer',
-            startDate: new Date('2023-01-01'),
+            company: 'POWMOTECH CO., LTD.',
+            position: 'Full-Stack Developer (Intern)',
+            startDate: new Date('2026-08-10'),
             isCurrent: true,
             description: 'พัฒนาและดูแล Web Application ด้วย React และ NestJS, ออกแบบ Database ด้วย PostgreSQL',
             order: 1,
