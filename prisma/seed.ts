@@ -53,7 +53,7 @@ async function main() {
             coverImage: 'https://images.contentstack.io/v3/assets/bltefdd0b53724fa2ce/blt5bac038e1ec70425/69bde68199b210b63c7dabc9/illustration-context-rag-app-database.webp',
             tags: ['Langchain', 'Flask', 'Ollama', 'Llama 3.2', 'ChromaDB'],
             repoUrl: 'https://github.com/Khachonyod/RAG-Local-ChatBot',
-            liveUrl: 'https://example.com',
+            liveUrl: 'https://huggingface.co/spaces/Khachonyod/LRAG',
             featured: true,
             order: 1,
         },
@@ -67,7 +67,7 @@ async function main() {
             coverImage: 'https://cdn.ai-forall.com/ifa_dev_media/How_AI_and_ML_are_Revolutionizing_License_Plate_Recognition_3afbc47dee.jpg',
             tags: ['FastAPI', 'YOLO', 'OpenCV', 'LPR'],
             repoUrl: 'https://github.com/Khachonyod/Thai-license-plate-Recognition',
-            liveUrl: 'https://example.com',
+            liveUrl: '/tlpr',
             featured: true,
             order: 2,
         },
@@ -82,6 +82,18 @@ async function main() {
             isCurrent: true,
             description: 'พัฒนาและดูแล Web Application ด้วย React และ NestJS, ออกแบบ Database ด้วย PostgreSQL',
             order: 1,
+        },
+    });
+
+    await prisma.experience.create({
+        data: {
+            company: 'University Project',
+            position: 'Full-Stack Developer',
+            startDate: new Date('2025-10-10'),
+            endDate: new Date('2026-05-05'),
+            isCurrent: false,
+            description: 'พัฒนาและดูแล Web Application ด้วย React และ NestJS, ออกแบบ Database ด้วย PostgreSQL',
+            order: 2,
         },
     });
 
