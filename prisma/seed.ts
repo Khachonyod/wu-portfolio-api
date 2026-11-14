@@ -19,7 +19,7 @@ async function main() {
             title: 'Full-Stack Developer',
             bio: 'Hi, I\'m Khachonyod Komin. I am a fourth-year Computer Engineering and Artificial Intelligence student at the University of the Thai Chamber of Commerce. With graduation approaching, I am eager to apply my academic background in software development, data analytics, and AI modeling to build innovative, real-world solutions. I am deeply passionate about leveraging intelligent technologies to solve complex problems and optimize workflows. Explore my portfolio to see my latest projects, and feel free to reach out if you would like to connect or collaborate!',
             avatarUrl: 'https://6ad82a8ad9feb8b36628ecea.imgix.net/scooter.jpg?auto=format&fit=fill&w=384',
-            resumeUrl: 'https://example.com/resume.pdf',
+            resumeUrl: '/resume.pdf',
             email: 'khachonyodwu@gmail.com',
             githubUrl: 'https://github.com/Khachonyod',
             linkedinUrl: 'https://www.linkedin.com/in/khachonyod-k-4b0a40381',
@@ -49,7 +49,7 @@ async function main() {
         data: {
             title: 'RAG Local Chatbot',
             slug: 'rag-local-chatbot',
-            description: 'แชทบอทที่ทำงานแบบ Local Host โดยใช้ Ollama และ Llama 3.2 เพื่อให้ได้คำตอบที่แม่นยำและรวดเร็ว',
+            description: 'แชทบอทที่ทำงานแบบ Local โดยใช้ Ollama และ Llama 3.2 เพื่อให้ได้คำตอบที่แม่นยำและรวดเร็ว',
             coverImage: 'https://images.contentstack.io/v3/assets/bltefdd0b53724fa2ce/blt5bac038e1ec70425/69bde68199b210b63c7dabc9/illustration-context-rag-app-database.webp',
             tags: ['Langchain', 'Flask', 'Ollama', 'Llama 3.2', 'ChromaDB'],
             repoUrl: 'https://github.com/Khachonyod/RAG-Local-ChatBot',
